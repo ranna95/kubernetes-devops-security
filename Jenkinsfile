@@ -38,7 +38,7 @@ pipeline {
       steps {
         withSonarQubeEnv('SonarQube') {
           sh "mvn sonar:sonar \
-          -Dsonar.projectKey=numeric-application -Dsonar.host.url=http://http://devsecops-demo.centralus.cloudapp.azure.com:9000"
+          -Dsonar.projectKey=numeric-application -Dsonar.host.url=http://devsecops-demo.centralus.cloudapp.azure.com:9000"
         }
        
       }
