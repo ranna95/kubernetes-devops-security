@@ -42,8 +42,8 @@ stage('SonarQube - SAST') {
             waitForQualityGate abortPipeline: true
           }
         }
-      }
     }
+   }
     
     stage('Docker Build and Push') {
       steps {
@@ -65,5 +65,4 @@ stage('SonarQube - SAST') {
     }
     
   }
-
 }
