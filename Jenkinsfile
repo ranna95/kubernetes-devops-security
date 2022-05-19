@@ -33,15 +33,18 @@ pipeline {
       }
     }
 
+    
     stage('SonarQube - SAST') {
       steps {
-        sh "mvn sonar:sonar -Dsonar.projectKey=numeric-application -Dsonar.host.url=http://devsecops-demo.centralus.cloudapp.azure.com:9000 -Dsonar.login=f5d399b00f05364bd20b266ec586e18ebb538b97"
-      }
-       timeout(time: 2, unit: 'MINUTES') {
+        withSonarQubeEnv('SonarQube') {
+          sh "mvn sonar:sonar -Dsonar.projectKey=numeric-application -Dsonar.host.url=http://devsecops-demo.eastus.cloudapp.azure.com:9000 -Dsonar.login=0925129cf435c63164d3e63c9f9d88ea9f9d7f05"
+        }
+        timeout(time: 2, unit: 'MINUTES') {
           script {
             waitForQualityGate abortPipeline: true
           }
         }
+      }
     }
    
     
