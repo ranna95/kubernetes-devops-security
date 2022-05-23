@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 
 echo $imageName #getting Image name from env variable
