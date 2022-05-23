@@ -15,7 +15,10 @@ spec:
       labels:
         app: devsecops
     spec:
-      serviceAccountName: default
+      volumes:
+      - name: vol
+        emptyDir: {}
+     serviceAccountName: default
       containers:
       - image: replace
         name: devsecops-container
