@@ -107,7 +107,7 @@
 		   <configuration>
 		      <format>ALL</format>
 		      <failBuildOnCVSS>11</failBuildOnCVSS>
-		      <!-- fail the build for CVSS greater than or equal to 8 -->
+		      <!-- fail the build for CVSS greater than or equal to 11 -->
 		      <!-- 
 					      use internal mirroring of CVE contents 
 					      Suppress files 
